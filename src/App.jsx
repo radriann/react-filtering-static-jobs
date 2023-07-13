@@ -16,7 +16,7 @@ function App () {
         bgColor='primary.desaturated-dark-cyan'
         bgImage={desktopBackground}
         bgSize='cover'
-        bgRepat='no-repeat'
+        bgRepeat='no-repeat'
       >
       </chakra.header>
       <JobsContainer />

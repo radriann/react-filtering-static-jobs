@@ -20,6 +20,7 @@ module.exports = {
   ],
   'rules': {
     'react/react-in-jsx-scope': 'off',
-    'quotes': 'off'
+    'quotes': 'off',
+    'react/prop-types': 'off'
   }
 }
