@@ -1,4 +1,5 @@
 import { Flex, Heading, Avatar, Badge, Text } from '@chakra-ui/react'
+import { JobBadge } from './JobBadge'
 
 export const JobItem = (job) => {
   return (
@@ -65,51 +66,13 @@ export const JobItem = (job) => {
       flexWrap={{ base: 'wrap' }}
       mt={{ base: '1rem', md: '0' }}
     >
-      <Badge
-        bgColor='cyan.100'
-        color='primary.desaturated-dark-cyan'
-        py='5px'
-        px='8px'
-        transition='.2s ease-in'
-        cursor='pointer'
-        _hover={{ bgColor: 'primary.desaturated-dark-cyan', color: 'white' }}>
-          {job.role}
-      </Badge>
-      <Badge
-        bgColor='cyan.100'
-        color='primary.desaturated-dark-cyan'
-        py='5px'
-        px='8px'
-        transition='.2s ease-in'
-        cursor='pointer'
-        _hover={{ bgColor: 'primary.desaturated-dark-cyan', color: 'white' }}>
-          {job.level}
-      </Badge>
+      <JobBadge text={job.role} />
+      <JobBadge text={job.level} />
       {job.languages.map((language, i) => (
-        <Badge
-          bgColor='cyan.100'
-          color='primary.desaturated-dark-cyan'
-          py='5px'
-          px='8px'
-          transition='.2s ease-in'
-          cursor='pointer'
-          _hover={{ bgColor: 'primary.desaturated-dark-cyan', color: 'white' }} key={i}
-          >
-            {language}
-          </Badge>
+        <JobBadge key={i} text={language} />
       ))}
       {job.tools.map((tool, i) => (
-        <Badge
-          bgColor='cyan.100'
-          color='primary.desaturated-dark-cyan'
-          py='5px'
-          px='8px'
-          transition='.2s ease-in'
-          cursor='pointer'
-          _hover={{ bgColor: 'primary.desaturated-dark-cyan', color: 'white' }} key={i}
-          >
-            {tool}
-          </Badge>
+        <JobBadge key={i} text={tool} />
       ))}
     </Flex>
     </Flex>

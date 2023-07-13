@@ -1,8 +1,11 @@
 import { chakra } from '@chakra-ui/react'
 import { JobItem } from './JobItem'
-import jobs from '../data.json'
+import { useContext } from 'react'
+import { JobsContext } from '../context/JobsContext'
 
 export const JobsContainer = () => {
+  const { jobs } = useContext(JobsContext)
+
   return (
     <chakra.main
       w='100%'

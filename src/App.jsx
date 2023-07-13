@@ -1,5 +1,7 @@
 import { chakra } from '@chakra-ui/react'
 import { JobsContainer } from './components/JobsContainer'
+import { useContext } from 'react'
+import { JobsContext } from './context/JobsContext'
 import desktopBackground from './assets/bg-header-desktop.svg'
 
 function App () {
