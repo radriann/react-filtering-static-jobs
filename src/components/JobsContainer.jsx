@@ -11,7 +11,7 @@ export const JobsContainer = () => {
     <chakra.main
       w='100%'
       px={{ base: '1rem', md: '6rem' }}
-      mt='5rem'
+      mt={{ base: '8rem', md: '5rem' }}
       display='flex'
       alignItems='center'
       justifyContent='center'

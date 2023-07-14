@@ -9,7 +9,7 @@ export const BadgesContainer = () => {
     <Flex
       position='absolute'
       w='60%'
-      top='80%'
+      top={{ base: '50%', md: '80%' }}
       left='20%'
       borderRadius='6px'
       boxShadow='md'
@@ -36,6 +36,7 @@ export const BadgesContainer = () => {
               transition='.2s ease-in'
               cursor='pointer'
               mx='.5rem'
+              my={{ base: '.5rem', md: '0' }}
               _hover={{ bgColor: 'primary.desaturated-dark-cyan', color: 'white' }}
             >
               {filter}
@@ -49,7 +50,7 @@ export const BadgesContainer = () => {
         color='primary.desaturated-dark-cyan'
         position='absolute'
         right='20px'
-        bottom='20px'
+        bottom={{ base: '30px', md: '20px' }}
         variant='link'
       >
         Clear
