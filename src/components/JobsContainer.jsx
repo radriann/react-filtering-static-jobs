@@ -4,7 +4,8 @@ import { useContext } from 'react'
 import { JobsContext } from '../context/JobsContext'
 
 export const JobsContainer = () => {
-  const { jobs } = useContext(JobsContext)
+  const { jobs, filterTools, filterJobs } = useContext(JobsContext)
+  const filteredJobs = filterJobs(jobs, filterTools)
 
   return (
     <chakra.main
@@ -17,7 +18,7 @@ export const JobsContainer = () => {
       flexDirection='column'
       gap={{ base: '60px', md: '30px' }}
     >
-     {jobs.map(job => (
+     {filteredJobs.map(job => (
       <JobItem key={job.id} {...job} />
      ))}
     </chakra.main>
