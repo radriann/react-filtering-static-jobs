@@ -1,7 +1,6 @@
 import { chakra } from '@chakra-ui/react'
 import { JobsContainer } from './components/JobsContainer'
-import { useContext } from 'react'
-import { JobsContext } from './context/JobsContext'
+import { BadgesContainer } from './components/BadgesContainer'
 import desktopBackground from './assets/bg-header-desktop.svg'
 
 function App () {
@@ -19,7 +18,9 @@ function App () {
         bgImage={desktopBackground}
         bgSize='cover'
         bgRepeat='no-repeat'
+        position='relative'
       >
+        <BadgesContainer />
       </chakra.header>
       <JobsContainer />
     </chakra.main>

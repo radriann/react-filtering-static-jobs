@@ -1,28 +1,24 @@
-import { createContext, useReducer } from 'react'
-import { JobsReducer } from '../reducers/JobsReducer'
+import { createContext } from 'react'
+import { useFilterReducer } from '../hooks/useFilterReducer'
 import dbJobs from '../data.json'
 
 export const JobsContext = createContext([])
 
+export const initialState = {
+  jobs: dbJobs,
+  filterTools: []
+}
+
 export const JobsContextProvider = ({ children }) => {
-  const initialState = {
-    jobs: dbJobs,
-    filterTools: []
-  }
-
-  const [state, dispatch] = useReducer(JobsReducer, initialState)
-
-  const getFilter = (e) => {
-    const { innerText } = e.target
-    dispatch({ type: 'SET_FILTER', payload: innerText.toLowerCase() })
-  }
+  const { state, getFilter, clearFilters } = useFilterReducer(initialState)
 
   return (
     <JobsContext.Provider
       value={{
         jobs: state.jobs,
         filterTools: state.filterTools,
-        getFilter
+        getFilter,
+        clearFilters
       }}
     >
       {children}
