@@ -13,6 +13,11 @@ export const useFilterReducer = () => {
     dispatch({ type: 'CLEAR_FILTERS' })
   }
 
+  const removeFilter = (e) => {
+    console.log(e.target.value)
+    dispatch({ type: 'REMOVE_FILTER', payload: e.target.value })
+  }
+
   const filterJobs = (jobs, filters) => {
     const filteredJobs = jobs.filter(job => {
       const matchesFilters = filters.every((filter) => {
@@ -30,5 +35,5 @@ export const useFilterReducer = () => {
     return filteredJobs
   }
 
-  return { clearFilters, getFilter, state, filterJobs }
+  return { clearFilters, getFilter, state, filterJobs, removeFilter }
 }

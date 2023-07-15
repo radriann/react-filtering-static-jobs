@@ -4,7 +4,7 @@ import { useFilterReducer } from '../hooks/useFilterReducer'
 export const JobsContext = createContext([])
 
 export const JobsContextProvider = ({ children }) => {
-  const { state, getFilter, clearFilters, filterJobs } = useFilterReducer()
+  const { state, getFilter, clearFilters, filterJobs, removeFilter } = useFilterReducer()
 
   return (
     <JobsContext.Provider
@@ -13,7 +13,8 @@ export const JobsContextProvider = ({ children }) => {
         filterTools: state.filterTools,
         getFilter,
         clearFilters,
-        filterJobs
+        filterJobs,
+        removeFilter
       }}
     >
       {children}

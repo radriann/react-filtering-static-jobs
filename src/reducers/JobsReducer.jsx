@@ -29,6 +29,17 @@ export const JobsReducer = (state, action) => {
       return initialState
     }
 
+    case actions.REMOVE_FILTER: {
+      const newFilterTools = state.filterTools.filter(filter => filter !== payload)
+
+      const newState = {
+        ...state,
+        filterTools: newFilterTools
+      }
+
+      return newState
+    }
+
     default:
       return state
   }

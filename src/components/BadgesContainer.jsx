@@ -3,7 +3,7 @@ import { useContext } from 'react'
 import { JobsContext } from '../context/JobsContext'
 
 export const BadgesContainer = () => {
-  const { filterTools, clearFilters } = useContext(JobsContext)
+  const { filterTools, clearFilters, removeFilter } = useContext(JobsContext)
 
   return (
     <Flex
@@ -27,20 +27,36 @@ export const BadgesContainer = () => {
         {
           filterTools &&
             filterTools.map((filter, i) => (
-              <Badge
-              key={i}
-              bgColor='cyan.100'
-              color='primary.desaturated-dark-cyan'
-              py='5px'
-              px='8px'
-              transition='.2s ease-in'
-              cursor='pointer'
-              mx='.5rem'
-              my={{ base: '.5rem', md: '0' }}
-              _hover={{ bgColor: 'primary.desaturated-dark-cyan', color: 'white' }}
-            >
-              {filter}
-            </Badge>
+              <Flex
+                key={i}
+                w='fit-content'
+                alignItems='center'
+                display='inline'
+              >
+                <Badge
+                  bgColor='cyan.100'
+                  color='primary.desaturated-dark-cyan'
+                  py='5px'
+                  px='8px'
+                  transition='.2s ease-in'
+                  cursor='pointer'
+                  mx='.5rem'
+                  my={{ base: '.5rem', md: '0' }}
+                  _hover={{ bgColor: 'primary.desaturated-dark-cyan', color: 'white' }}
+                  position='relative'
+                >
+                {filter}
+              </Badge>
+              <Button
+                onClick={removeFilter}
+                colorScheme='red'
+                w='30px'
+                h='28px'
+                value={filter}
+              >
+                X
+              </Button>
+            </Flex>
             ))
         }
       </Flex>
