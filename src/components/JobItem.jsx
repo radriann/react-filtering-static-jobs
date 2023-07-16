@@ -44,10 +44,10 @@ export const JobItem = (job) => {
           >
             {job.company}
           </Text>
-          <Badge px={{ base: '8px', md: '10px' }} py={{ base: '3px', md: '5px' }} bgColor={job.new ? 'primary.desaturated-dark-cyan' : null} borderRadius='full' fontSize={{ base: '12px', md: '14px' }} display={job.new ? 'inline' : 'none'}>
+          <Badge px={{ base: '8px', md: '10px' }} py={{ base: '3px', md: '5px' }} color='white' bgColor={job.new ? 'primary.desaturated-dark-cyan' : null} borderRadius='full' fontSize={{ base: '12px', md: '14px' }} display={job.new ? 'inline' : 'none'}>
             {job.new ? 'New!' : null}
           </Badge>
-          <Badge px={{ base: '8px', md: '10px' }} py={{ base: '3px', md: '5px' }} bgColor={job.featured ? 'neutral.very-dark-grayish-cyan' : null} borderRadius='full' fontSize={{ base: '12px', md: '14px' }} display={job.featured ? 'inline' : 'none'}>
+          <Badge px={{ base: '8px', md: '10px' }} py={{ base: '3px', md: '5px' }} color='white' bgColor={job.featured ? 'neutral.very-dark-grayish-cyan' : null} borderRadius='full' fontSize={{ base: '12px', md: '14px' }} display={job.featured ? 'inline' : 'none'}>
             {job.featured ? 'Featured' : null}
           </Badge>
         </Flex>
