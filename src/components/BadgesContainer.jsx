@@ -21,7 +21,6 @@ export const BadgesContainer = () => {
     >
       <Flex
         alignItems='center'
-        gap='10px'
         display='inline'
       >
         {
@@ -32,6 +31,8 @@ export const BadgesContainer = () => {
                 w='fit-content'
                 alignItems='center'
                 display='inline'
+                position='relative'
+                mr='2rem'
               >
                 <Badge
                   bgColor='cyan.100'
@@ -49,10 +50,16 @@ export const BadgesContainer = () => {
               </Badge>
               <Button
                 onClick={removeFilter}
-                colorScheme='red'
+                bgColor='primary.desaturated-dark-cyan'
+                borderRadius='0px'
+                borderTopRightRadius='6px'
+                borderBottomRightRadius='6px'
                 w='30px'
                 h='28px'
                 value={filter}
+                position='absolute'
+                right='-30px'
+                _hover={{ bgColor: 'gray.800' }}
               >
                 X
               </Button>
